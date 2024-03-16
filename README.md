@@ -1,7 +1,5 @@
 <h1 align="center">SupermarketHack</h1>
 
--------
-
 <p align="center">
 	<img src="/Images/SupermarketHack.jpg" />
 </p>
