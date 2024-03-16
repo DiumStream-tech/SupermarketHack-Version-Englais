@@ -34,12 +34,7 @@ namespace SupermarketHack
                 if (s is Window window)
                 {
                     if (window.WindowState == WindowState.Maximized || window.WindowState == WindowState.Normal)
-                    {
-                        Storyboard storyboard = (Storyboard)FindResource("WindowLoadAnimation");
-
-                        if (storyboard != null)
-                            storyboard.Begin(this);
-                    }
+                        _ = BeginStoryboard("WindowLoadAnimation", 0);
                 }
             };
         }
@@ -53,26 +48,25 @@ namespace SupermarketHack
 
         private async void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
-            Storyboard storyboard = (Storyboard)FindResource("WindowMinimizeAnimation");
-
-            if (storyboard != null)
-                storyboard.Begin(this);
-
-            await Task.Delay(300);
-
+            await BeginStoryboard("WindowMinimizeAnimation");
             WindowState = WindowState.Minimized;
         }
 
         private async void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Storyboard storyboard = (Storyboard)FindResource("WindowMinimizeAnimation");
+            await BeginStoryboard("WindowMinimizeAnimation");
+            Close();
+        }
+
+        private async Task BeginStoryboard(string name, int delay = 300)
+        {
+            Storyboard storyboard = (Storyboard)FindResource(name);
 
             if (storyboard != null)
                 storyboard.Begin(this);
 
-            await Task.Delay(300);
-
-            Close();
+            if (delay > 0)
+                await Task.Delay(delay);
         }
     }
 }

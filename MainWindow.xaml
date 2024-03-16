@@ -23,9 +23,6 @@
                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                     <BeginStoryboard Storyboard="{StaticResource WindowLoadAnimation}" />
                 </EventTrigger>
-                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                    <BeginStoryboard Storyboard="{StaticResource WindowLoadAnimation}" />
-                </EventTrigger>
             </ControlTemplate.Triggers>
             <Border CornerRadius="15" BorderBrush="#222222" Padding="1" Background="#10FFFFFF">
                 <Border x:Name="MainBrd" CornerRadius="15" BorderBrush="#222222" Padding="0">

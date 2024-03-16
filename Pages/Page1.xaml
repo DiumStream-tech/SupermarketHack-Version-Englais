@@ -1,7 +1,7 @@
 ﻿<Page x:Class="SupermarketHack.Pages.Page1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GTA VI Launcher" Width="1024" Height="642">
+        Title="SupermarketHack" Width="1024" Height="642">
 
     <Page.Resources>
         <ResourceDictionary>

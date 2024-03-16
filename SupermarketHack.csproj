@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <None Remove="Fonts\Pusia Extra Bold.ttf" />
-    <None Remove="Fonts\UptownBoy.ttf" />
     <None Remove="Resources\close.png" />
   </ItemGroup>
 
@@ -22,7 +21,6 @@
 
   <ItemGroup>
     <Resource Include="Fonts\Pusia Extra Bold.ttf" />
-    <Resource Include="Fonts\UptownBoy.ttf" />
     <Resource Include="Resources\close.png" />
   </ItemGroup>
 
