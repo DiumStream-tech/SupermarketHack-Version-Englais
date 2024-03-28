@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 
+
 namespace SupermarketHack.Pages
 {
     public class Values
@@ -27,7 +28,7 @@ namespace SupermarketHack.Pages
     }
 
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Логика взаимодействия для Page1.xaml
     /// </summary>
     public partial class Page1 : Page
     {
@@ -63,7 +64,8 @@ namespace SupermarketHack.Pages
             try
             {
                 if (ProcessIsRunning())
-                    MessageBox.Show("The game is running!\nPlease close it for the program to work correctly", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Обнаружена запущена игра!\nПожалуйста, закройте её для корректной работы программы", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+
                 else
                 {
                     string setMoney = Convert.ToDouble(MoneyTextBox.Text) > 1E+38 ? "1E+38" : MoneyTextBox.Text;
@@ -79,15 +81,16 @@ namespace SupermarketHack.Pages
                         allSaveText = SetValue(allSaveText, Values.CompletedCheckout, setCompletedCheckout);
 
                         File.WriteAllText(saveFile, allSaveText, Encoding.UTF8);
-                        MessageBox.Show("Success!", string.Empty, MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Успех!", string.Empty, MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
-                        MessageBox.Show("Values should not be empty!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Значения не должны быть пустыми!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
