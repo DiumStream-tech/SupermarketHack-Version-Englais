@@ -13,7 +13,7 @@
 
     <Grid>
         <Button x:Name="Next1Btn" Content="Apply" Foreground="White" Width="NaN" Height="NaN" Margin="411,512,411,78" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="18" Style="{StaticResource CustomButtonStyle}" Click="ApplyChanges" />
-        <Label Content="by breelock" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="411,547,411,37" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="14"/>
+        <Label Content="by breelock | Version DiumStream" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="411,547,411,37" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="14"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,82,0,0" TextWrapping="Wrap" Text="HACK" VerticalAlignment="Top" Background="#00000000" FontFamily="/Fonts/#Pusia Extra Bold" Foreground="White" Height="53" Width="412" TextAlignment="Center" FontSize="45"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="SUPERMARKET" VerticalAlignment="Top" Background="#FFCC2157" FontFamily="/Fonts/#Pusia Extra Bold" Foreground="White" Height="53" Width="412" TextAlignment="Center" FontSize="45"/>
 
