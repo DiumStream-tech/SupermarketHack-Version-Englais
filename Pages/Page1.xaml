@@ -13,7 +13,7 @@
 
     <Grid>
         <Button x:Name="Next1Btn" Content="Apply" Foreground="White" Width="NaN" Height="NaN" Margin="411,512,411,78" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="18" Style="{StaticResource CustomButtonStyle}" Click="ApplyChanges" />
-        <Label Content="by breelock | Version DiumStream" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="411,547,411,37" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="14"/>
+        <Label Content="Version DiumStream" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="411,547,411,37" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="14"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,82,0,0" TextWrapping="Wrap" Text="HACK" VerticalAlignment="Top" Background="#00000000" FontFamily="/Fonts/#Pusia Extra Bold" Foreground="White" Height="53" Width="412" TextAlignment="Center" FontSize="45"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="SUPERMARKET" VerticalAlignment="Top" Background="#FFCC2157" FontFamily="/Fonts/#Pusia Extra Bold" Foreground="White" Height="53" Width="412" TextAlignment="Center" FontSize="45"/>
 
@@ -22,7 +22,7 @@
 
         <TextBox x:Name="StoreLevelTextBox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left" Margin="450,226,0,0" Foreground="White" TextWrapping="NoWrap" VerticalAlignment="Top" Width="356" Height="60" FontFamily="/Fonts/#Pusia Extra Bold" Style="{StaticResource CustomTextBoxStyle}" FontSize="30" PreviewTextInput="NumberValidationTextBox" MaxLength="3"/>
         <Label Content="Store Level: " Foreground="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="37,227,574,357" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="30"/>
-
+        
         <TextBox x:Name="CompletedCheckoutTextBox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left" Margin="450,0,0,0" Foreground="White" TextWrapping="NoWrap" VerticalAlignment="Center" Width="356" Height="60" FontFamily="/Fonts/#Pusia Extra Bold" Style="{StaticResource CustomTextBoxStyle}" FontSize="30" PreviewTextInput="NumberValidationTextBox" MaxLength="9"/>
         <Label Content="Customers Served: " Foreground="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="37,292,574,292" FontFamily="/Fonts/#Pusia Extra Bold" FontSize="30"/>
     </Grid>
