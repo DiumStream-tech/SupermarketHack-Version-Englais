@@ -1,0 +1,79 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - '*'  # Déclenche ce workflow lorsqu'un tag est poussé
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        platform: [windows-latest, ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up environment
+        run: |
+          if [ "${{ matrix.platform }}" == "windows-latest" ]; then
+            choco install nsis  # Installer NSIS pour Windows
+          elif [ "${{ matrix.platform }}" == "ubuntu-latest" ]; then
+            sudo apt-get update && sudo apt-get install -y build-essential fakeroot debhelper  # Outils de construction pour Linux
+          elif [ "${{ matrix.platform }}" == "macos-latest" ]; then
+            brew install pkg  # Outils de construction pour macOS
+          fi
+
+      - name: Build application
+        run: |
+          # Remplace par ton propre processus de construction
+          # Par exemple, pour Windows :
+          if [ "${{ matrix.platform }}" == "windows-latest" ]; then
+            # Code pour construire ton application et créer un .exe
+          elif [ "${{ matrix.platform }}" == "ubuntu-latest" ]; then
+            # Code pour construire et empaqueter pour Linux (.deb)
+          elif [ "${{ matrix.platform }}" == "macos-latest" ]; then
+            # Code pour construire et empaqueter pour macOS (.pkg)
+          
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            # Chemin vers tes fichiers d'installation
+            # Par exemple, pour Windows :
+            path/to/installer.exe
+            # Pour Linux :
+            path/to/package.deb
+            # Pour macOS :
+            path/to/package.pkg
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            Automated Release with Installers for Windows, Linux, and macOS
+          draft: false
+          prerelease: false
+          files: |
+            build-artifacts/*.exe  # Windows Installer
+            build-artifacts/*.deb  # Linux Installer
+            build-artifacts/*.pkg  # macOS Installer
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
