@@ -4,4 +4,8 @@
   "description": "",
   "author": "DiumStream",
   "license": "ISC"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DiumStream-tech/Dium-Craft-Launcher.git"
+    }
 }
